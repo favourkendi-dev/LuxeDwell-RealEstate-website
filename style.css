@@ -77,8 +77,10 @@ body {
 }
 
 .hero-content h1 {
-  font-size: 60px;
-  margin-bottom: 20px;
+  font-size: 96px;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+
 }
 
 .hero-content button {
@@ -86,6 +88,9 @@ body {
   border: 2px solid white;
   background: transparent;
   color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
   cursor: pointer;
   transition: 0.3s;
 }
@@ -93,4 +98,70 @@ body {
 .hero-content button:hover {
   background: white;
   color: black;
+}
+
+
+.about {
+  padding: 80px 60px;
+  background: #111;
+}
+
+.about h2 {
+  color: gold;
+  margin-bottom: 40px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.about-text p {
+  margin-bottom: 20px;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.btn {
+  padding: 12px 20px;
+  border-width: 2px;
+  width: 256px;
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  padding: 12px 25px;
+  margin: 60px;
+  transform: 0.3s;
+  
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+/* gallery */
+.gallery {
+  padding: 80px 60px;
+}
+
+.gallery-header h2 {
+  color: gold;
+}
+
+.gallery-header h1 {
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.team{
+  font-size: 36px;
 }
