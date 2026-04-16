@@ -1,32 +1,36 @@
+/* --- Global Styles --- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
 body {
-  background: black;
-  color: white;
+  background: #000;
+  color: #fff;
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
-/* navbar*/
+/* --- Navigation --- */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 60px;
-  background: rgba(0, 0, 0, 0.9);
+  padding: 20px 5%;
+  background: rgba(0, 0, 0, 0.95);
   position: sticky;
   top: 0;
   z-index: 1000;
+  border-bottom: 1px solid #222;
 }
 
 .header {
-    color: gold;
-    font-size: 20px;
-    font-weight: bold;
-
+  color: gold;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 1px;
 }
 
 .nav-links {
@@ -38,6 +42,8 @@ body {
 .nav-links a {
   text-decoration: none;
   color: white;
+  font-size: 0.9rem;
+  text-transform: uppercase;
   transition: 0.3s;
 }
 
@@ -45,131 +51,148 @@ body {
   color: gold;
 }
 
+/* --- Hero Section --- */
 .hero {
   position: relative;
-  height: 100vh;
-  overflow: hidden;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .hero-video {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  z-index: -1;
 }
 
 .overlay {
   position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.6);
 }
 
 .hero-content {
   position: relative;
-  z-index: 2;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  z-index: 10;
+  padding: 0 20px;
 }
 
 .hero-content h1 {
-  font-size: 96px;
-  margin-bottom: 1.5rem;
-  font-weight: 700;
-
+  font-size: clamp(2.5rem, 8vw, 5rem);
+  margin-bottom: 2rem;
+  font-weight: 300;
+  letter-spacing: 4px;
 }
 
-.hero-content button {
-  padding: 12px 25px;
+.hero-btn {
+  padding: 15px 40px;
   border: 2px solid white;
   background: transparent;
   color: white;
-  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
   cursor: pointer;
-  transition: 0.3s;
+  transition: 0.4s;
 }
 
-.hero-content button:hover {
+.hero-btn:hover {
   background: white;
   color: black;
 }
 
-
+/* --- About Section --- */
 .about {
-  padding: 80px 60px;
-  background: #111;
+  padding: 100px 10%;
+  background: #0a0a0a;
 }
 
-.about h2 {
+.team {
+  font-size: 2.5rem;
   color: gold;
-  margin-bottom: 40px;
+  text-align: center;
+  margin-bottom: 50px;
 }
 
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 60px;
+  align-items: center;
 }
 
 .about-text p {
-  margin-bottom: 20px;
-  line-height: 1.6;
+  margin-bottom: 25px;
   color: #ccc;
+  font-size: 1.1rem;
 }
 
 .btn {
-  padding: 12px 20px;
-  border-width: 2px;
-  width: 256px;
-  border: 2px solid white;
+  padding: 12px 35px;
+  border: 2px solid gold;
   background: transparent;
-  color: white;
+  color: gold;
   cursor: pointer;
-  padding: 12px 25px;
-  margin: 60px;
-  transform: 0.3s;
-  
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: gold;
+  color: black;
 }
 
 .about-image img {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 4px;
+  filter: grayscale(30%);
 }
 
-/* gallery */
+/* --- Property Gallery --- */
 .gallery {
-  padding: 80px 60px;
+  padding: 100px 5%;
+}
+
+.gallery-header {
+  text-align: center;
+  margin-bottom: 60px;
 }
 
 .gallery-header h2 {
   color: gold;
+  letter-spacing: 5px;
+  font-size: 0.9rem;
 }
 
 .gallery-header h1 {
-  font-size: 40px;
-  margin-bottom: 30px;
+  font-size: 2.5rem;
+  margin-top: 10px;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-}
-
-.team{
-  font-size: 36px;
+  /* This creates the responsive columns automatically */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
 }
 
 .card {
-  background: #222;
-  padding: 10px;
-  border-radius: 10px;
+  background: #111;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: 0.4s;
+  border: 1px solid #222;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  border-color: gold;
 }
 
 .card img {
@@ -178,48 +201,79 @@ body {
   object-fit: cover;
 }
 
+.card p {
+  padding: 5px 20px;
+}
+
 .type {
   color: gold;
-  font-size: 12px;
-  margin-top: 10px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  margin-top: 15px;
 }
 
 .title {
-  font-size: 18px;
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 .price {
-  color: #aaa;
-  font-size: 14px;
+  color: #888;
+  padding-bottom: 20px !important;
 }
 
-/* CTA */
-.cta {
-  height: 60vh;
-  background: url("images/background.jpeg") center/cover fixed;
-  position: relative;
+/* --- Aside / Footer Section --- */
+.aside {
+  background: linear-gradient(135deg, #1e293b, #000);
+  margin: 60px 5%;
+  padding: 80px 40px;
+  border-radius: 30px;
+  text-align: center;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
 }
 
-.cta::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6);
+.aside-section {
+  font-size: 2rem;
+  max-width: 700px;
+  margin-bottom: 20px;
 }
 
-.cta-content {
-  position: relative;
-  text-align: center;
+.aside-text {
+  color: #cbd5e1;
+  max-width: 600px;
+  margin-bottom: 40px;
 }
 
-.cta button {
-  margin-top: 20px;
-  padding: 12px 20px;
+.aside-btn {
+  padding: 15px 40px;
   background: gold;
+  color: black;
   border: none;
+  font-weight: bold;
+  border-radius: 50px;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+.aside-btn:hover {
+  background: white;
+  transform: scale(1.05);
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; /* Hide links for mobile, add burger menu later */
+  }
+  .navbar {
+    justify-content: center;
+  }
+  .about {
+    padding: 60px 5%;
+  }
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
 }
