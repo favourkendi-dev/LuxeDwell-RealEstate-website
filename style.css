@@ -578,6 +578,20 @@ body {
   color: gold;
 }
 
+
+#osm-map {
+    height: 500px; /* Essential: The map needs a height to show up */
+    width: 100%;
+    margin-top: 30px;
+    z-index: 1; /* Ensures it stays behind navigation menus but above the background */
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+}
+
+.map-header {
+    text-align: center;
+    padding-bottom: 20px;
+}
 .main-footer {
   background-color: #050505; /* Deepest black */
   color: #fff;
