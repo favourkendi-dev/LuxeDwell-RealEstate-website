@@ -1,3 +1,5 @@
+
+
 /* --- Global Styles --- */
 * {
   margin: 0;
@@ -580,14 +582,36 @@ body {
 
 
 #osm-map {
-    height: 500px; /* Essential: The map needs a height to show up */
+    height: 60vh; /* Essential: The map needs a height to show up */
     width: 100%;
-    margin-top: 30px;
+    min-height: 300px;
+    margin-top: 40px;
+    border: 1px solid #333;
+    background-color: white;
+    margin: 20px 0;
     z-index: 1; /* Ensures it stays behind navigation menus but above the background */
     border-top: 1px solid #222;
     border-bottom: 1px solid #222;
+    display: block;
+
 }
 
+section {
+  width: 100%;
+}
+
+
+.location-showcase {
+    background: #050505;
+    padding: 100px 8%;
+    text-align: center;
+}
+
+.custom-marker {
+  background-color: #D4AF37;
+  border: 2PX solid#fff;
+  border-radius: 50%;
+}
 .map-header {
     text-align: center;
     padding-bottom: 20px;
@@ -730,5 +754,12 @@ body {
   }
   .hero-content h1 {
     font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #osm-map {
+    height: 50vh;
+    min-height: 250px;
   }
 }
