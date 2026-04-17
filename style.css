@@ -125,6 +125,10 @@ body {
 
 }
 
+.logo {
+  color: gold;
+}
+
 .glass-search {
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(20px);
@@ -218,6 +222,37 @@ body {
 .luxe-go-btn:hover {
     background: #fff; /* Shifts to white for a "high-contrast" luxury feel */
     transform: scale(1.05);
+}
+
+.card-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.luxe-view-map {
+    background: transparent;
+    border: 1px solid gold;
+    color: gold;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.luxe-view-map:hover {
+    background: rgba(212, 175, 55, 0.1);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+.luxe-grid {
+    display: grid;
+    /* This makes 1 column on phones, 2 on tablets, 3 on desktops */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+    gap: 25px;
 }
 
 /*About.html  Section*/
