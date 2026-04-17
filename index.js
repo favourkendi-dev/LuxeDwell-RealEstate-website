@@ -109,35 +109,7 @@ function executeLuxeSearch() {
         errorDiv.style.display = "none";
         grid.style.display = "grid";
 
-        results.forEach(p => {
-            grid.innerHTML += `
-                <div class="property-card">
-                    <div class="card-img" style="background-image: url('${p.image || 'villa.jpg'}')">
-                        <span class="luxe-type-tag">${p.type === 'rent' ? 'Airbnb' : 'For Sale'}</span>
-                    </div>
-
-                    <div style="padding: 20px;">
-                        <h4 style="color: #D4AF37; margin-bottom: 5px;">${p.title}</h4>
-                        <p style="color: #fff; font-weight: bold; font-size: 1.1rem;">${p.price}</p>
-                        
-                        <p style="color: #ccc; font-size: 0.9rem; margin: 10px 0;">${p.description || 'Luxury residence in a prime location.'}</p>
-
-                        <div class="card-actions" style="display: flex; gap: 10px; margin-top: 15px;">
-                            <button class="view-map-btn" 
-                                onclick="zoomToProperty(${p.coords[0]}, ${p.coords[1]}, '${p.title}')"
-                                style="flex: 1; background: transparent; border: 1px solid #D4AF37; color: #D4AF37; padding: 8px; cursor: pointer;">
-                                <i class="fas fa-map-marker-alt"></i> Map
-                            </button>
-                            
-                            <a href="https://wa.me/254700000000?text=I'm interested in ${p.title}" 
-                               class="inquire-btn"
-                               style="flex: 1; background: #D4AF37; color: #111; text-align: center; text-decoration: none; padding: 8px; font-weight: bold;">
-                                Inquire
-                            </a>
-                        </div>
-                    </div>
-                </div>`;
-        });
+        
 
         if (!scrolledToArea) {
             section.scrollIntoView({ behavior: 'smooth' });
