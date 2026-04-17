@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LuxeDwell Real Estate </title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Playfair+Display&family=Dancing+Script&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
@@ -20,6 +21,11 @@
             </ul>
         </div>
     </nav>
+
+    <div class="weather-widget">
+    <span>Nairobi: </span>
+    <span id="temp-display" style="color: gold;">--</span>°C
+    </div>
 
     <!--Api Search Button-->
    <div class="search-container">
@@ -149,25 +155,25 @@
   <div class="parallax-container">
     <div class="stat-item">
       <h2>Ksh 50B+</h2>
-      <p>Gross Sales Volume</p>
+      <p style="color: gold;">Gross Sales Volume</p>
     </div>
     <div class="stat-item">
       <h2>1,200+</h2>
-      <p>Transactions Closed</p>
+      <p style="color: gold;">Transactions Closed</p>
     </div>
     <div class="stat-item">
-      <h2>$10M+</h2>
-      <p>Avg. Luxury Listing</p>
+      <h2>10M+</h2>
+      <p style="color: gold;">Avg. Luxury Listing</p>
     </div>
     <div class="stat-item">
       <h2>#1</h2>
-      <p>Luxury Team in Region</p>
+      <p style="color: gold;">Luxury Team in Region</p>
     </div>
   </div>
 </section>
 <!--The Neighbourhood Part-->
 <section class="neighborhoods">
-  <div class="section-header"> <span class="gold-subtitle">CURATED LOCATIONS</span> 
+  <div class="section-header"> <span class="gold-subtitle" style="color: gold;">CURATED LOCATIONS</span> 
     <h2>Explore The Neighborhoods</h2>
    </div>
 
@@ -206,7 +212,7 @@
     <div class="location-text">
       <span class="gold-label">Our Private Office</span>
       <h2 class="modern-title">Global Headquarters</h2>
-      <p>Westlands Business Park, Nairobi, Kenya</p>
+      <p><span style="color: gold;">Westlands Business Park, </span>Nairobi, Kenya</p>
     </div>
   </div>
 </section>
@@ -217,7 +223,7 @@
 <!--Available properties in the estate-->
   <section id="listings-section" class="listings-container">
   <div class="listings-header">
-    <span class="gold-subtitle"> AMONG CURATED AIRBNBS</span>
+    <span class="gold-subtitle" style="color: gold;"> AMONG CURATED AIRBNBS</span>
     <h2 id="results-count">Available Properties</h2>
     
   </div>

@@ -1,0 +1,29 @@
+{
+  "name": "luxedwell-website",
+  "version": "1.0.0",
+  "description": "LUXEDWELL REAL ESTATE WEBSITE ### Project Description LuxeDwell is a high end  responsive web platform designed for Nairobi’s premier real estate market. The project focuses on bridging the gap between architectural art and functional urban living, providing a bespoke digital experience for high net worth investors and discerning homeowners in prime nodes like Karen, Westlands and Muthaiga.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/favourkendi-dev/LuxeDwell-RealEstate-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/favourkendi-dev/LuxeDwell-RealEstate-website/issues"
+  },
+  "homepage": "https://github.com/favourkendi-dev/LuxeDwell-RealEstate-website#readme",
+  "devDependencies": {
+    "jest": "^30.3.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
+
+
