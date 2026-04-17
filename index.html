@@ -8,17 +8,38 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 </head>
 <body>
+  <!--Navigation bar-->
+  <nav>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">LUXEDWELL</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html" >Contact</a></li>
+            </ul>
+        </div>
+    </nav>
 
-  <nav class="navbar">
-    <div class="header">LuxeDwell Estate</div>
-    <ul class="nav-links">
-      <li><a href="home.html">Home</a></li>
-      <li><a href="about.html">Who we are</a></li>
-      <li><a href="services.html">What we offer</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </nav>
+    <!--Api Search Button-->
+   <div class="search-container">
+    <div class="luxe-single-bar">
+        <i class="fas fa-location-dot bar-icon"></i>
+        <input type="text" id="unified-search" placeholder="Search Nairobi luxury villas, penthouses...">
+        
+        
+        <button class="filter-toggle" title="More Filters">
+            <i class="fas fa-sliders"></i>
+        </button>
 
+        <button class="luxe-go-btn" onclick="executeLuxeSearch()">
+          Search
+        </button>
+        
+    </div>
+</div>
+
+<!--Hero Section-->
   <header class="hero">
     <video autoplay loop muted playsinline class="hero-video">
       <source src="images/hero.mp4" type="video/mp4">
@@ -30,6 +51,7 @@
     </div>
   </header>
 
+  <!--Meet the Team Section-->
   <section class="about-modern">
   <div class="about-container">
     
@@ -50,6 +72,8 @@
 
   </div>
 </section>
+
+<!--Luxedwell Gallery-->
 
   <section class="gallery">
     <div class="gallery-header">
@@ -111,7 +135,7 @@
       </div>
     </div>
   </section>
-
+<!--ASide section-->
   <aside class="aside">
     <h2 class="aside-section">Wondering what your home is worth?</h2>
     <p class="aside-text">
@@ -119,7 +143,7 @@
     </p>
     <button class="aside-btn">View All Open Houses</button>
   </aside>
-
+<!--Social Proof of Hard Data Of Luxedwell Progress-->
   <section class="social-proof-parallax">
   <div class="parallax-overlay"></div>
   <div class="parallax-container">
@@ -141,43 +165,42 @@
     </div>
   </div>
 </section>
-
+<!--The Neighbourhood Part-->
 <section class="neighborhoods">
-  <div class="section-header">
-    <span class="gold-subtitle">CURATED LOCATIONS</span>
+  <div class="section-header"> <span class="gold-subtitle">CURATED LOCATIONS</span> 
     <h2>Explore The Neighborhoods</h2>
-  </div>
+   </div>
 
   <div class="neighborhood-grid">
     <div class="area-card">
-      <img src= "images/img30.jpeg" alt="Runda">
+      <img src= "images/img30.jpeg" alt="parklands">
       <div class="area-content">
-        <h3>Runda</h3>
+        <h3>Parklands</h3>
         <p>Quiet Luxury & Diplomatic Serenity</p>
         <a href="#" class="area-link">View Listings</a>
       </div>
     </div>
 
     <div class="area-card">
-      <img src="images/img16.jpeg" alt="Karen">
+      <img src="images/img16.jpeg" alt="limuru">
       <div class="area-content">
-        <h3>Karen</h3>
+        <h3>Limuru</h3>
         <p>Rustic Elegance & Colonial Charm</p>
         <a href="#" class="area-link">View Listings</a>
       </div>
     </div>
 
     <div class="area-card">
-      <img src="images/img25.jpeg" alt="Muthaiga">
+      <img src="images/img25.jpeg" alt="Waiyaki">
       <div class="area-content">
-        <h3>Muthaiga</h3>
+        <h3>Waiyaki</h3>
         <p>The Old Guard & Prestigious Heritage</p>
         <a href="#" class="area-link">View Listings</a>
       </div>
     </div>
   </div>
 </section>
-
+<!--Api location where the search bar will take you-->
 <section class="location-showcase">
   <div class="location-inner">
     <div class="location-text">
@@ -187,11 +210,56 @@
     </div>
   </div>
 </section>
-
+<!--API Map-->
  <section>
-  <div id="osm-map"></div>
- </section>
+  <div id="osm-map" style="height :500px; width :100%;"></div>
+<!--Available properties in the estate-->
+  <section id="listings-section" class="listings-container">
+  <div class="listings-header">
+    <span class="gold-subtitle">CURATED AIRBNBS</span>
+    <h2 id="results-count">Available Properties</h2>
+    
+  </div>
+  <div id="listings-grid" class="luxe-grid">
+  </div>
 
+  <div id="no-results" class="error-container" style="display: none;">
+    <h3>Location Not Found</h3>
+    <p>We couldn't find listings in that area .Try searcing for <b>"Karen"</b> or <b>"Westlands"</b></p>
+  </div>
+
+
+  <div class="neighborhood-grid">
+    <div class="area-card" id="runda">
+      <img src= "images/img1.jpeg" alt="Runda">
+      <div class="area-content">
+        <h3>Runda</h3>
+        <p>Quiet Luxury & Diplomatic Serenity</p>
+        <a href="#" class="area-link">View Listings</a>
+      </div>
+    </div>
+
+    <div class="area-card" id="karen">
+      <img src="images/img18.jpeg" alt="Karen">
+      <div class="area-content">
+        <h3>Karen</h3>
+        <p>Rustic Elegance & Colonial Charm</p>
+        <a href="#" class="area-link">View Listings</a>
+      </div>
+    </div>
+
+    <div class="area-card" id="muthaiga">
+      <img src="images/img8.jpeg" alt="Muthaiga">
+      <div class="area-content">
+        <h3>Muthaiga</h3>
+        <p>The Old Guard & Prestigious Heritage</p>
+        <a href="#" class="area-link">View Listings</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--Footer Section-->
 <footer class="main-footer">
   <div class="footer-container">
     
@@ -238,7 +306,7 @@
   </div>
 
   <div class="footer-bottom">
-    <p>&copy; 2026 LuxeDwell Estate. All Rights Reserved. | <a href="#">Website by Gemini Design</a></p>
+    <p>&copy; 2026 LuxeDwell Estate. All Rights Reserved. | <a href="#">Website by Favour Kendi</a></p>
   </div>
 </footer>
 

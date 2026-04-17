@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us </title>
+    
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <div class="container nav-container">
+            <a href="index.html" class="logo">LUXEDWELL</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="contact.html" >Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="contact-hero">
+        <div class="container">
+            <h1>Contact Our Concierge</h1>
+            <p>Your journey to a luxury lifestyle starts with a conversation.</p>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="contact-wrapper">
+            <div class="contact-info">
+                <h2>Get In Touch</h2>
+                <p>Whether you are looking to invest, buy, or design your dream home, our team is ready to assist you.</p>
+                
+                <div class="info-item">
+    
+                    <div>
+                        <h4>Visit Our Office</h4>
+                        <p>Westlands Business Park, 7th Floor<br>Nairobi, Kenya</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                
+                    <div>
+                        <h4>Direct Line</h4>
+                        <p>+254 743 768 543</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    
+                    <div>
+                        <h4>Email Us</h4>
+                        <p>concierge@luxedwell.com</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address</label>
+                        <input type="email" placeholder="email@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Interested In</label>
+                        <select>
+                            <option>Property Purchase</option>
+                            <option>Investment Consulting</option>
+                            <option>Interior Design</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Your Message</label>
+                        <textarea rows="5" placeholder="How can we help?"></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <section class="location-showcase">
+        <div class="location-inner">
+           <div class="location-text">
+           <span class="gold-label">Our Private Office</span>
+           <h2 class="modern-title">Global Headquarters</h2>
+           <p>Westlands Business Park, Nairobi, Kenya</p>
+          </div>
+        </div>
+</section>
+
+    <div id="osm-map"></div>
+
+    <footer class="main-footer">
+  <div class="footer-container">
+    
+    <div class="footer-col">
+      <h2 class="footer-logo">LUXEDWELL<span>ESTATE</span></h2>
+      <p class="footer-about">
+        Defining the pinnacle of luxury real estate in Kenya. From exclusive off-market estates to architectural masterpieces, we curate lifestyles for the world's most discerning clients.
+      </p>
+      <div class="footer-socials">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <h3>Navigation</h3>
+      <ul>
+        <li><a href="#">Exclusive Listings</a></li>
+        <li><a href="#">Neighborhood Guides</a></li>
+        <li><a href="#">The Team</a></li>
+        <li><a href="#">Sell Your Property</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h3>Contact Us</h3>
+      <p class="contact-item"><strong>Location:</strong> 8th Floor, Westlands Business Park, Nairobi</p>
+      <p class="contact-item"><strong>Phone:</strong> +254 743 865 785</p>
+      <p class="contact-item"><strong>Email:</strong> concierge@luxedwell.com</p>
+    </div>
+
+    <div class="footer-col">
+      <h3>The Inner Circle</h3>
+      <p>Subscribe to receive early access to off-market properties and market insights.</p>
+      <form class="footer-form">
+        <input type="email" placeholder="Email Address" required>
+        <button type="submit" onclick="alert("Thankyou for your Response .....You will be Attended Shortly")>Join</button>
+      </form>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2026 LuxeDwell Estate. All Rights Reserved. | <a href="#">Website by Favour Kendi</a></p>
+  </div>
+</footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
