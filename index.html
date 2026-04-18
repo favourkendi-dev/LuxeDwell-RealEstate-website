@@ -53,7 +53,7 @@
     <div class="overlay"></div>
     <div class="hero-content">
       <h1>LuxeDwell Real Estate</h1>
-      <button class="hero-btn">View All Our Houses</button>
+      <button class="hero-btn" onclick="alert('View the Houses of your Choice on our Search Section.....Thankyou !!!')">View All Our Houses</button>
     </div>
   </header>
 
@@ -67,7 +67,7 @@
       <div class="description-box">
         <p class="highlight-para">In an ever-changing market, we pride ourselves on being the steady ground beneath your feet.</p>
         <p>The name "LuxeDwell" reflects our core philosophy that quality real estate should be the common ground where community and individuality meet. We are not just agents; we are your neighbors and advocates.</p>
-        <a href="#" class="luxe-button">Explore Our Story</a>
+        <a href="about.html" class="luxe-button">Explore Our Story</a>
       </div>
     </div>
 
@@ -147,7 +147,9 @@
     <p class="aside-text">
       The market has moved fast. Discover how much equity you have built and see your home's current competitive market value in seconds.
     </p>
-    <button class="aside-btn">View All Open Houses</button>
+    <button class="aside-btn" onclick="alert('Search your house of choice on the search Button.....Thankyou')">
+    View All Open Houses
+    </button>
   </aside>
 <!--Social Proof of Hard Data Of Luxedwell Progress-->
   <section class="social-proof-parallax">
@@ -306,7 +308,7 @@
       <p>Subscribe to receive early access to off-market properties and market insights.</p>
       <form class="footer-form">
         <input type="email" placeholder="Email Address" required>
-        <button type="submit">Join</button>
+        <button type="submit" onclick="alert('We will Keep You Updated on Our Latest News and House Openings....Thankyou for Subscribing')">Join</button>
       </form>
     </div>
 
@@ -316,6 +318,22 @@
     <p>&copy; 2026 LuxeDwell Estate. All Rights Reserved. | <a href="#">Website by Favour Kendi</a></p>
   </div>
 </footer>
+
+<div id="property-modal" class="modal-overlay" style="display:none;">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+        <img id="modal-image" src="" alt="Property">
+        <h2 id="modal-title"></h2>
+        <p><strong>Location:</strong> <span id="modal-location"></span></p>
+        <p><strong>Price:</strong> <span id="modal-price"></span></p>
+        <p id="modal-description"></p>
+        
+        <div class="modal-actions">
+            <button id="modal-map-btn" class="luxe-btn">Show on Map</button>
+            <a id="modal-whatsapp" href="" target="_blank" class="whatsapp-btn">Inquire on WhatsApp</a>
+        </div>
+    </div>
+</div>
 
  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 

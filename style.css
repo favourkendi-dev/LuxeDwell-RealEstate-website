@@ -210,6 +210,52 @@ h1, h2, h3, p, a {
     color: rgba(255, 255, 255, 0.4);
 }
 
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background: #111;
+  color: white;
+  width: 90%;
+  max-width: 500px;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.modal-content img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.close-btn {
+  float: right;
+  font-size: 25px;
+  cursor: pointer;
+  color: gold;
+}
+
+.modal-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px;
+  background: gold;
+  color: black;
+  text-decoration: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 .luxe-go-btn {
     background: gold;
     color: #111;
@@ -1089,6 +1135,7 @@ section {
 .services-section {
     padding: 100px 0;
     background-color: #ffffff;
+    background-image: url();
 }
 
 .services-header {
@@ -1237,48 +1284,192 @@ section {
     color: rgba(255, 255, 255, 0.05); /* Very subtle number */
 }
 
-.service-link {
-    color: var(--gold);
-    text-decoration: none;
-    font-size: 0.9rem;
-    display: inline-block;
-    margin-top: 20px;
-    opacity: 0; /* Hidden until hover */
-    transition: 0.5s;
+
+
+/* Individual Container */
+.service-container {
+    position: relative;
+    height: 350px; /* Fixed height for all boxes */
+    background-color: #000; /* Base color for the opacity effect */
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;  /* Vertically centers the text */
+    justify-content: center; /* Horizontally centers the text */
+    text-align: center;
+    border: 1px solid #222;
 }
 
-/*THE HOVER MAGIC*/
-.service-card:hover {
-    transform: scale(1.03); /* Slight zoom out */
-    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+/* Background Image with Opacity */
+.service-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.4; /* Lowered opacity as requested */
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    z-index: 1;
 }
 
-.service-card:hover .card-overlay {
-    background: rgba(17, 17, 17, 0.85); /* Darker on hover to read better */
-    backdrop-filter: blur(5px); /* Frosty glass effect */
+/* Text Content Container */
+.service-content {
+    position: relative;
+    z-index: 2; /* Sits above the image */
+    padding: 20px;
+    width: 90%; /* Keeps text from hitting the edges */
 }
 
-.service-card:hover .card-content {
-    transform: translateY(0); /* Content slides up */
+.service-content h3 {
+    font-family: 'Playfair Display', serif;
+    color: #D4AF37; /* Gold accent for the title */
+    font-size: 1.6rem;
+    margin-bottom: 12px;
+    text-transform: capitalize;
 }
 
-.service-card:hover .service-link {
-    opacity: 1; /* Link fades in */
+.service-content p {
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0 auto;
+    max-width: 250px; /* Prevents text from stretching too wide */
 }
 
-.service-icon {
-    font-size: 2.5rem;
-    color: var(--gold);
-    margin-bottom: 15px;
-    display: block;
+/* Hover Effect for Luxury feel */
+.service-container:hover .service-bg-image {
+    transform: scale(1.1);
+    opacity: 0.6; /* Brightens slightly when hovered */
 }
 
-/* Responsive Fix */
-@media (max-width: 768px) {
+.service-container:hover {
+    border-color: #D4AF37;
+    cursor: pointer;
+}
+
+/* --- RESPONSIVE MEDIA QUERIES --- */
+
+/* For Tablets (iPad, etc.) */
+@media (max-width: 1024px) {
     .services-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr); /* 2 columns instead of 3 */
+        padding: 40px 5%;
     }
 }
+
+/* For Mobile Phones (iPhone, Android) */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr; /* 1 column only - everything stacks */
+        gap: 20px;
+    }
+
+    .service-container {
+        height: 300px; /* Slightly shorter boxes for smaller screens */
+    }
+
+    .service-content h3 {
+        font-size: 1.4rem; /* Smaller font so it doesn't wrap weirdly */
+    }
+
+    .service-content p {
+        font-size: 0.85rem;
+        max-width: 100%; /* Let text use the full width of the box */
+    }
+}
+
+/* For Very Small Screens (Small Phones) */
+@media (max-width: 480px) {
+    .services-grid {
+        padding: 20px 15px;
+    }
+    
+    .service-container {
+        height: 250px;
+    }
+}
+/* 1. Force 3 columns per row */
+.services-grid {
+    display: grid;
+    /* This forces 3 equal columns */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+    padding: 60px 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* 2. Card Alignment */
+.service-card {
+    position: relative;
+    background: #111; /* Darker background for more luxury feel */
+    padding: 50px 30px;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;    /* Horizontal centering */
+    justify-content: center; /* Vertical centering */
+    text-align: center;
+    min-height: 450px;
+    border: 1px solid #222;
+}
+
+/* 3. Background Image with "Not Clear" (Low) Opacity */
+.service-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=800&q=80');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15; /* This makes the image very faint/unclear as requested */
+    z-index: 1;
+    transition: opacity 0.4s ease;
+}
+
+/* 4. Text and Content Alignment */
+.service-icon, .service-card h3, .service-card p, .service-list {
+    position: relative;
+    z-index: 2; /* Keeps text above the background */
+    width: 100%; /* Ensures text takes full width for centering */
+}
+
+.service-card h3 {
+    font-family: 'Playfair Display', serif;
+    color: #D4AF37;
+    font-size: 1.7rem;
+    margin: 20px 0 10px 0; /* Space between icon and text */
+}
+
+.service-card p {
+    font-family: 'Montserrat', sans-serif;
+    color: #ccc;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+/* 5. Responsive: Drops to 1 column on mobile */
+@media (max-width: 992px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 per row on tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr; /* 1 per row on phones */
+    }
+}
+
+
+
+.sales-bg::before { background-image: url('images/sales-image.jpg'); }
+.design-bg::before { background-image: url('images/design-image.jpg'); }
 
 .process-grid {
     display: grid;
@@ -1317,6 +1508,8 @@ details p {
 .subtitle {
   color: gold;
 }
+
+
 
 
 /* VARIABLES */
@@ -1390,4 +1583,30 @@ footer { background: var(--dark); color: var(--white); padding: 40px 0; text-ali
 
 p {
   font-weight: 500;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: flex; justify-content: center; align-items: center;
+    z-index: 1000;
+}
+.modal-content {
+    background: white; padding: 30px; border-radius: 8px;
+    max-width: 500px; width: 90%; position: relative;
+    font-family: 'Montserrat', sans-serif;
+}
+.close-btn { position: absolute; right: 20px; top: 10px; cursor: pointer; font-size: 24px; }
+.whatsapp-btn { 
+    display: inline-block; background: #25D366; color: white; 
+    padding: 10px 20px; text-decoration: none; border-radius: 5px; 
+}
+
+.property-card img {
+    width: 100%;       /* Take up the full width of the card */
+    height: 200px;     /* Set a fixed height for all images */
+    object-fit: cover; /* This is the secret—it crops instead of stretching */
+    border-radius: 8px 8px 0 0; /* Rounds the top corners only */
+    display: block;
 }

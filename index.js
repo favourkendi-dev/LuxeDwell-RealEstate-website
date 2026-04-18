@@ -166,13 +166,27 @@ if (typeof document !== 'undefined') {
             errorDiv.style.display = "none";
             grid.style.display = "grid";
 
+            // Loop through results and create cards
+            results.forEach(property => {
+                const card = document.createElement('div');
+                card.className = 'property-card';
+                card.innerHTML = `
+                    <img src="${property.image}" alt="${property.title}">
+                    <h3>${property.title}</h3>
+                    <p>${property.location} | ${property.price}</p>
+                    <button class="view-details-btn">View Details</button>
+                `;
+                
+                // When they click the button, open the modal!
+                card.querySelector('.view-details-btn').onclick = () => openModal(property);
+                
+                grid.appendChild(card);
+            });
+
             if (!scrolledToArea) {
                 section.scrollIntoView({ behavior: 'smooth' });
             }
-
-            if (map && results[0].coords) {
-                map.flyTo(results[0].coords, 14);
-            }
+            // ... rest of your map code
 
         } else {
             grid.style.display = "none";
@@ -194,6 +208,27 @@ if (typeof document !== 'undefined') {
 
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+}
+
+function openModal(property) {
+    document.getElementById("property-modal").style.display = "flex";
+
+    document.getElementById("modal-image").src = property.image;
+    document.getElementById("modal-title").innerText = property.title;
+    document.getElementById("modal-location").innerText = property.location;
+    document.getElementById("modal-price").innerText = property.price;
+    document.getElementById("modal-description").innerText = property.description || "No description available.";
+
+    document.getElementById("modal-whatsapp").href =
+        `https://wa.me/${property.contact}?text=Hi, I am interested in ${property.title}`;
+
+    document.getElementById("modal-map-btn").onclick = function () {
+        zoomToProperty(property.coords[0], property.coords[1], property.title);
+    };
+}
+
+function closeModal() {
+    document.getElementById("property-modal").style.display = "none";
 }
 
 
