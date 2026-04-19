@@ -1,4 +1,4 @@
-// 1. Wrap EVERYTHING in this check
+// weather function
 if (typeof document !== 'undefined') {
 
     async function getNairobiWeather() {
@@ -17,14 +17,14 @@ if (typeof document !== 'undefined') {
         }
     }
 
-    // Only add the listener if 'document' exists
+    // event listener
     document.addEventListener('DOMContentLoaded', getNairobiWeather);
 }
 
-// Global map (safe)
+// Global map 
 let map = null;
 
-// Properties data (clean + unique IDs)
+// Properties data (array)
 const properties = [
     {
         id: 1,
@@ -146,7 +146,7 @@ const properties = [
     }
 ];
 
-// Filter function (reusable + testable)
+// Filter function
 function filterProperties(list, term) {
     if (!term) return list;
     const query = term.toLowerCase().trim();
@@ -161,7 +161,7 @@ if (typeof document !== 'undefined') {
 
     document.addEventListener("DOMContentLoaded", function () {
 
-        // Initialize map ONLY ONCE
+        // map 
         if (!map) {
             map = L.map('osm-map').setView([-1.264, 36.804], 15);
 
@@ -273,7 +273,7 @@ if (typeof document !== 'undefined') {
             if (!scrolledToArea) {
                 section.scrollIntoView({ behavior: 'smooth' });
             }
-            // ... rest of your map code
+            // rest of your map code
 
         } else {
             grid.style.display = "none";

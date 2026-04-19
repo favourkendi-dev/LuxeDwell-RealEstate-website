@@ -1,5 +1,4 @@
 
-
 /*Universal styling */
 * {
   margin: 0;
@@ -1520,7 +1519,7 @@ section {
     transition: transform 0.4s ease;
 }
 
-/* --- The Faded Image Layer --- */
+/*The Faded Image Layer */
 .service-card::after {
     content: "";
     position: absolute;
@@ -1533,7 +1532,7 @@ section {
     transition: opacity 0.4s ease;
 }
 
-/* --- The Dark Bottom Gradient (Ensures text contrast) --- */
+/* The Dark Bottom Gradient (Ensures text contrast)*/
 .service-card::before {
     content: "";
     position: absolute;
@@ -1542,7 +1541,7 @@ section {
     z-index: 2;
 }
 
-/* --- Ensure text sits on the very top layer --- */
+/*Ensure text sits on the very top layer*/
 .service-content {
     position: relative;
     z-index: 3;
@@ -1556,7 +1555,7 @@ section {
     opacity: 0.5; /* Brightens slightly on hover for an interactive feel */
 }
 
-/* --- Applying the Images to the AFTER Layer --- */
+/* Applying the Images to the AFTER Layer*/
 .service-sales::after { 
     background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80'); 
 }
@@ -1691,7 +1690,6 @@ footer { background: var(--dark); color: var(--white); padding: 40px 0; text-ali
 
 @media (max-width: 992px) { .contact-wrapper { grid-template-columns: 1fr; } }
 
-/* Only use the 3rd font for specific accents */
 .special-tag {
     font-family: 'Dancing Script', cursive;
     color: #d4af37; /* Gold color for luxury */
