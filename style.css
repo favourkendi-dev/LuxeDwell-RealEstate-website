@@ -72,6 +72,32 @@ h1, h2, h3, p, a {
   color: gold;
 }
 
+
+/* This triggers for screens smaller than 768px (Tablets and Phones) */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column; /* Stacks Logo above the Links */
+        padding: 15px;
+    }
+
+    .nav-links {
+        display: flex;
+        flex-direction: column; /* Stacks Home, About, etc. vertically */
+        align-items: center;
+        width: 100%;
+        padding: 0;
+        margin-top: 10px;
+    }
+
+    .nav-links li {
+        margin: 10px 0; /* Adds space between the stacked links */
+    }
+
+    .logo {
+        margin-bottom: 10px;
+        font-size: 1.5rem; /* Makes logo a bit bigger/easier to tap */
+    }
+}
 /* Hero Section */
 .hero {
   position: relative;

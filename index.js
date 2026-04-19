@@ -1,15 +1,23 @@
-async function getNairobiWeather() {
+async function updateWeatherDisplay() {
+    const display = document.getElementById('nairobi-temp');
+    if (!display) return; // Only runs if the page has the 'nairobi-temp' id
+
     try {
-        // This URL asks for Nairobi's coordinates (-1.28, 36.82)
         const url = "https://api.open-meteo.com/v1/forecast?latitude=-1.28&longitude=36.82&current_weather=true";
         const response = await fetch(url);
         const data = await response.json();
+        const temp = Math.round(data.current_weather.temperature);
         
-        return data.current_weather.temperature;
+        display.innerHTML = `${temp}`;
     } catch (error) {
+        display.innerHTML = "Nairobi: 24°C"; // Elegant fallback
         console.log("Weather failed to load");
     }
 }
+
+// Start the process when the page is ready
+document.addEventListener('DOMContentLoaded', updateWeatherDisplay);
+
 // Global map (safe)
 let map = null;
 
@@ -230,6 +238,7 @@ function openModal(property) {
 function closeModal() {
     document.getElementById("property-modal").style.display = "none";
 }
+
 
 
 
