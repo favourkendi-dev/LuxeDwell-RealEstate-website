@@ -1636,3 +1636,19 @@ p {
     border-radius: 8px 8px 0 0; /* Rounds the top corners only */
     display: block;
 }
+
+/* Target the image inside your property modal */
+.modal-content img {
+    width: 100%;            /* Keeps it full width of the modal */
+    max-height: 400px;      /* Prevents it from being too tall */
+    object-fit: cover;      /* Crops it elegantly instead of squishing it */
+    border-radius: 8px;     /* Optional: adds a luxury soft edge */
+    margin-bottom: 20px;    /* Space between image and text */
+}
+
+/* Mobile specific adjustment */
+@media (max-width: 768px) {
+    .modal-content img {
+        max-height: 250px;  /* Smaller height for phone screens */
+    }
+}

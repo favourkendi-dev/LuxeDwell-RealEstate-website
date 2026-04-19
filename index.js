@@ -230,12 +230,27 @@ function openModal(property) {
     document.getElementById("modal-price").innerText = property.price;
     document.getElementById("modal-description").innerText = property.description || "No description available.";
 
+    const myNumber = "0743769189";
     document.getElementById("modal-whatsapp").href =
-        `https://wa.me/${property.contact}?text=Hi, I am interested in ${property.title}`;
+        `https://wa.me/${myNumber}?text=Hi, I am interested in ${property.title} at LuxeDwell`;
 
     document.getElementById("modal-map-btn").onclick = function () {
-        zoomToProperty(property.coords[0], property.coords[1], property.title);
-    };
+    // 1. Zoom the OpenStreetMap to the property coordinates
+    zoomToProperty(property.coords[0], property.coords[1], property.title);
+
+    // 2. Find the map using your specific ID
+    const mapSection = document.getElementById('osm-map'); 
+
+    if (mapSection) {
+        // 3. Smoothly scroll to the map
+        mapSection.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+
+    // 4. Close the modal so the user can actually see the map
+    if (typeof closeModal === 'function') {
+        closeModal();
+    }
+};
 }
 
 function closeModal() {
