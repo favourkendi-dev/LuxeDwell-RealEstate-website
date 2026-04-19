@@ -1,22 +1,25 @@
-async function updateWeatherDisplay() {
-    const display = document.getElementById('nairobi-temp');
-    if (!display) return; // Only runs if the page has the 'nairobi-temp' id
+// 1. Wrap EVERYTHING in this check
+if (typeof document !== 'undefined') {
 
-    try {
-        const url = "https://api.open-meteo.com/v1/forecast?latitude=-1.28&longitude=36.82&current_weather=true";
-        const response = await fetch(url);
-        const data = await response.json();
-        const temp = Math.round(data.current_weather.temperature);
-        
-        display.innerHTML = `${temp}`;
-    } catch (error) {
-        display.innerHTML = "Nairobi: 24°C"; // Elegant fallback
-        console.log("Weather failed to load");
+    async function getNairobiWeather() {
+        const display = document.getElementById('nairobi-temp');
+        if (!display) return; 
+
+        try {
+            const url = "https://api.open-meteo.com/v1/forecast?latitude=-1.28&longitude=36.82&current_weather=true";
+            const response = await fetch(url);
+            const data = await response.json();
+            const temp = Math.round(data.current_weather.temperature);
+            
+            display.innerHTML = `Nairobi: ${temp}°C`;
+        } catch (error) {
+            display.innerHTML = "Nairobi: 24°C";
+        }
     }
-}
 
-// Start the process when the page is ready
-document.addEventListener('DOMContentLoaded', updateWeatherDisplay);
+    // Only add the listener if 'document' exists
+    document.addEventListener('DOMContentLoaded', getNairobiWeather);
+}
 
 // Global map (safe)
 let map = null;
