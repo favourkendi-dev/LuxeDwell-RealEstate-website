@@ -1,13 +1,16 @@
-name: LuxeDwell Continuous Integration
+name: LuxeDwell CI and Deploy
 
 on:
   push:
-    branches: [ main ]  # Runs every time you push to the main branch
-  pull_request:
     branches: [ main ]
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
-  test-logic:
+  test-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,3 +27,15 @@ jobs:
 
       - name: Run Jest Tests
         run: npm test
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.' # This uploads your whole project
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
