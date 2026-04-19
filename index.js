@@ -260,6 +260,8 @@ function closeModal() {
 
 
 
+
+
 if (typeof module !== 'undefined') {
     module.exports = {
         properties,

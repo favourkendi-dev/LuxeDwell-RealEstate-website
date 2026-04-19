@@ -1492,6 +1492,97 @@ section {
     }
 }
 
+/* --- Services Section Styling --- */
+.services-section {
+    padding: 80px 0;
+    background-color: #000;
+    color: #fff;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    padding: 20px;
+}
+
+/* --- The Individual Card (The Container) --- */
+.service-card {
+    position: relative;
+    min-height: 400px;
+    display: flex;
+    align-items: flex-end;
+    padding: 40px 30px;
+    border-radius: 15px;
+    overflow: hidden; /* Clips the background image to the corners */
+    background-color: #000; /* Shows through the faded image */
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    transition: transform 0.4s ease;
+}
+
+/* --- The Faded Image Layer --- */
+.service-card::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-size: cover;
+    background-position: center;
+    /* REDUCE OPACITY HERE (0.1 is very dark, 0.9 is very bright) */
+    opacity: 0.35; 
+    z-index: 1;
+    transition: opacity 0.4s ease;
+}
+
+/* --- The Dark Bottom Gradient (Ensures text contrast) --- */
+.service-card::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.8) 100%);
+    z-index: 2;
+}
+
+/* --- Ensure text sits on the very top layer --- */
+.service-content {
+    position: relative;
+    z-index: 3;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-card:hover::after {
+    opacity: 0.5; /* Brightens slightly on hover for an interactive feel */
+}
+
+/* --- Applying the Images to the AFTER Layer --- */
+.service-sales::after { 
+    background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80'); 
+}
+.service-invest::after { 
+    background-image: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80'); 
+}
+.service-manage::after { 
+    background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=800&q=80'); 
+}
+.service-design::after { 
+    background-image: url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&w=800&q=80'); 
+}
+.service-shortstay::after { 
+    background-image: url('https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80'); 
+}
+.service-arch::after { 
+    background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80'); 
+}
+
+/* Icon and List Styling */
+.service-icon { font-size: 3rem; color: #D4AF37; margin-bottom: 20px; }
+.service-card h3 { font-size: 1.6rem; margin-bottom: 15px; text-shadow: 2px 2px 10px rgba(0,0,0,0.5); }
+.service-list { list-style: none; padding: 0; }
+.service-list li { display: flex; align-items: center; margin-bottom: 8px; color: #e0e0e0; font-size: 0.95rem; }
+.service-list i { color: #D4AF37; margin-right: 10px; }
+
 
 
 .sales-bg::before { background-image: url('images/sales-image.jpg'); }
