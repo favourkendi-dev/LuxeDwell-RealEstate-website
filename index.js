@@ -69,10 +69,74 @@ const properties = [
         title: "Ngumo Estate",
         location: "Mbagathi",
         type: "buy",
-        price: "$2.5M",
+        price: "Ksh 2.5M",
         description: "Modern villa with garden views.",
         coords: [-1.350, 36.720],
         image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811",
+        contact: "254743546456"
+    },
+
+    {
+        id: 6,
+        title: "Parklands",
+        location: "parklands",
+        type: "buy",
+        price: "Ksh2.5M",
+        image: "images/img27.jpeg",
+        coords: [-1.350, 36.720]
+    },
+    {
+        id: 7,
+        title: "Ngong Road",
+        location: "Ngong",
+        type: "rent",
+        price: "Ksh45,000/night",
+        description: "Luxury living in Ngong Road.",
+        coords: [-1.268, 36.804],
+        image: "images/img12.jpeg",
+        contact: "254743546456"
+    },
+    {
+        id: 8,
+        title: "Kilimani",
+        location: "kilimani",
+        type: "buy",
+        price: "Ksh 250 000",
+        description: "Modern villa with garden views.",
+        coords: [-1.350, 36.720],
+        image: "images/img13.jpeg",
+        contact: "254743546456"
+    },
+
+    {
+        id: 9,
+        title: "Kenyatta",
+        location: "Kenyatta Market",
+        type: "buy",
+        price: "ksh 250 000",
+        image: "images/img28.jpeg",
+        coords: [-1.350, 36.720]
+    },
+    {
+        id: 10,
+        title: "Thika",
+        location: "Thika Road",
+        type: "rent",
+        price: "ksh 450 000/night",
+        description: "Luxury living in Westlands.",
+        coords: [-1.268, 36.804],
+        image: "images/img6.jpeg",
+        contact: "254743546456"
+    },
+    {
+        id: 11,
+        title: "Mombasa Estate",
+        location: "Mombasa Road",
+        type: "buy",
+        price: "Ksh 1 000 000",
+        description: "Modern villa with garden views.",
+        coords: [-1.350, 36.720],
+        image: "images/img7.jpeg",
         contact: "254743546456"
     }
 ];
@@ -159,7 +223,14 @@ if (typeof document !== 'undefined') {
         const areaMap = {
             runda: document.getElementById("runda"),
             karen: document.getElementById("karen"),
-            muthaiga: document.getElementById("muthaiga")
+            muthaiga: document.getElementById("muthaiga"),
+            ngong: document.getElementById("Ngong"),
+            thika: document.getElementById("Thika"),
+            kilimani: document.getElementById("kilimani"),
+            westlands: document.getElementById("westlands"),
+            mombasa: document.getElementById("mombasa"),
+            kenyatta: document.getElementById("kenyatta"),
+            parklands: document.getElementById("parklands"),
         };
 
         let scrolledToArea = false;
@@ -256,9 +327,6 @@ function openModal(property) {
 function closeModal() {
     document.getElementById("property-modal").style.display = "none";
 }
-
-
-
 
 
 
