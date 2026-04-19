@@ -11,7 +11,7 @@ if (typeof document !== 'undefined') {
             const data = await response.json();
             const temp = Math.round(data.current_weather.temperature);
             
-            display.innerHTML = `Nairobi: ${temp}°C`;
+            display.innerHTML = `${temp}`;
         } catch (error) {
             display.innerHTML = "Nairobi: 24°C";
         }
