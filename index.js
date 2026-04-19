@@ -32,6 +32,7 @@ const properties = [
         location: "Runda",
         type: "rent",
         price: "$450/night",
+        description: "Luxury living in Runda Estate.",
         image: "images/img1.jpeg",
         coords: [-1.268, 36.804]
     },
@@ -41,6 +42,7 @@ const properties = [
         location: "Karen",
         type: "buy",
         price: "$2.5M",
+        description: "Luxury living in Karen City.",
         image: "images/img18.jpeg",
         coords: [-1.350, 36.720]
     },
@@ -50,6 +52,7 @@ const properties = [
         location: "Muthaiga",
         type: "buy",
         price: "$2.5M",
+        description: "Luxury living in Muthaiga.",
         image: "images/img8.jpeg",
         coords: [-1.350, 36.720]
     },
@@ -81,6 +84,7 @@ const properties = [
         title: "Parklands",
         location: "parklands",
         type: "buy",
+        description: "Luxury living in Parklands.",
         price: "Ksh2.5M",
         image: "images/img27.jpeg",
         coords: [-1.350, 36.720]
@@ -113,6 +117,7 @@ const properties = [
         title: "Kenyatta",
         location: "Kenyatta Market",
         type: "buy",
+        description: "Modern villa with garden views.",
         price: "ksh 250 000",
         image: "images/img28.jpeg",
         coords: [-1.350, 36.720]
